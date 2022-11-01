@@ -1,35 +1,88 @@
-main {
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+html {
     width: auto;
-    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: Roboto;
+    align-items: center;
 }
 
 .wrapper {
     width: 335px;
-    height: 236px;
     border-radius: 10px;
     border: 1px solid #C4C4C4;
-    margin: auto;   
+    margin: auto;
 }
 
 .main-block {
     width: 282px;
-    height: 175px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.purple-x {
+    display: none;
 }
 
 .upper-block {
-    width: 336px;
+    width: 335px;
     height: 28px;
     background-color: #FFDC40;
     border-radius: 10px 10px 0 0;
 }
 
+h1 {
+    margin: 16px 0;
+}
+
 button {
-    margin-top: 18px;
+    margin: 18px 0 18px 0;
     border-radius: 71px;
     border-style: none;
     color: white;
+    font-family: Roboto;
 
+}
+
+.grey-up,
+.black-up,
+.black-down {
+    display: none;
+}
+
+.sort {
+    display: flex;
+    width: 277px;
+    justify-content: end;
+}
+
+.inputs {
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+    margin-top: 12px;
+    width: 284px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs-block {
+    width: 286px;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+input {
+    border-radius: 10px;
+    width: 230px;
+    height: 30px;
+    border: none;
 }
 
 .button-add {
