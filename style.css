@@ -1,0 +1,56 @@
+main {
+    width: auto;
+    margin: 0;
+}
+
+.wrapper {
+    width: 335px;
+    height: 236px;
+    border-radius: 10px;
+    border: 1px solid #C4C4C4;
+    margin: auto;   
+}
+
+.main-block {
+    width: 282px;
+    height: 175px;
+
+}
+
+.upper-block {
+    width: 336px;
+    height: 28px;
+    background-color: #FFDC40;
+    border-radius: 10px 10px 0 0;
+}
+
+button {
+    margin-top: 18px;
+    border-radius: 71px;
+    border-style: none;
+    color: white;
+
+}
+
+.button-add {
+    width: 150px;
+    height: 42px;
+    background-color: #833AE0;
+}
+
+.button-add p {
+    margin: 0 29px 0 50px;
+}
+
+.button-plus {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    background-color: #AA68FE;
+}
+
+.foot {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
