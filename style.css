@@ -24,10 +24,6 @@ html {
     align-items: center;
 }
 
-.purple-x {
-    display: none;
-}
-
 .upper-block {
     width: 335px;
     height: 28px;
@@ -83,6 +79,10 @@ input {
     width: 230px;
     height: 30px;
     border: none;
+}
+
+.purple-x{
+    display: none;
 }
 
 .button-add {
