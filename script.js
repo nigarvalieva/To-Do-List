@@ -43,7 +43,7 @@ function changeColor(event) {
 
 foot.addEventListener('click', addDiv);
 
-function addDiv(){
+function addDiv() {
     let div = document.createElement('div');
     div.innerHTML =
         `<div class="inputs-block">
@@ -52,8 +52,42 @@ function addDiv(){
             </div>`
     let img = div.querySelectorAll('.grey-x')
     document.querySelector('.inputs').append(div)
-    img.forEach((item) =>{
+    img.forEach((item) => {
         item.addEventListener('click', removeInput)
     })
     div.addEventListener('keyup', readOnly)
 }
+
+//Sort
+
+let sort = document.querySelector('.grey-down')
+sort.addEventListener('click', changeSort)
+sort.addEventListener('mouseover', sortHover)
+sort.addEventListener('mouseout', sortHover)
+
+let count = 0;
+function changeSort(event) {
+    if (count % 2 == 0) {
+        event.target.src = './img/greyUp.svg'
+        count++
+    } else {
+        event.target.src = './img/greyDown.svg'
+        count++
+    } 
+}
+
+function sortHover(event) {
+    if (event.type == 'mouseover') {
+        if (count % 2 == 0) {
+            event.target.src = './img/blackDown.svg'
+        } else {
+            event.target.src = './img/blackUp.svg'
+        }
+    } else {
+        if (count % 2 == 0) {
+            event.target.src = './img/greyDown.svg'
+        } else {
+            event.target.src = './img/greyUp.svg'
+        }
+    }
+} 
