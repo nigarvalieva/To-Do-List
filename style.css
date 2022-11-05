@@ -45,12 +45,6 @@ button {
 
 }
 
-.grey-up,
-.black-up,
-.black-down {
-    display: none;
-}
-
 .sort {
     display: flex;
     width: 300px;

@@ -48,7 +48,7 @@ function addDiv(){
     div.innerHTML =
         `<div class="inputs-block">
             <input type="text">
-            <img src="./img/Group 77.svg" alt="grey-x" class="grey-x">
+            <img src="./img/greyX.svg" alt="grey-x" class="grey-x">
             </div>`
     let img = div.querySelectorAll('.grey-x')
     document.querySelector('.inputs').append(div)
