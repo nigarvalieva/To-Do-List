@@ -19,9 +19,8 @@ greyX.forEach((item) => {
     item.addEventListener('click', removeInput)
 })
 
-function removeInput() {
-    let inputsBlock = document.querySelector('.inputs-block')
-    inputsBlock.remove()
+function removeInput(event) {
+    event.target.parentElement.remove()
 }
 
 //Добавить
@@ -51,8 +50,10 @@ function addDiv(){
             <input type="text">
             <img src="./img/Group 77.svg" alt="grey-x" class="grey-x">
             </div>`
-    let img = div.querySelector('.grey-x')
+    let img = div.querySelectorAll('.grey-x')
     document.querySelector('.inputs').append(div)
+    img.forEach((item) =>{
+        item.addEventListener('click', removeInput)
+    })
     div.addEventListener('keyup', readOnly)
-    img.addEventListener('click', removeInput)
 }

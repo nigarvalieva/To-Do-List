@@ -85,9 +85,14 @@ button {
 
 input {
     border-radius: 10px;
-    width: 255px;
+    width: 240px;
     height: 30px;
+    margin: auto;
     border: none;
+}
+
+input:focus{
+    outline: none;
 }
 
 .button-add {
