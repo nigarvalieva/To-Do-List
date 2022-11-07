@@ -1,6 +1,8 @@
 
 //Input
 
+const inputBlock = document.querySelector('.inputs-block')
+
 const input = document.querySelectorAll('input');
 input.forEach((item) => {
     item.addEventListener('keyup', readOnly)
@@ -61,20 +63,86 @@ function addDiv() {
 //Sort
 
 let sort = document.querySelector('.grey-down')
-sort.addEventListener('click', changeSort)
+sort.addEventListener('click', changeSortColor)
 sort.addEventListener('mouseover', sortHover)
 sort.addEventListener('mouseout', sortHover)
 
 let count = 0;
-function changeSort(event) {
+
+function changeSortColor(event) {
     if (count % 2 == 0) {
         event.target.src = './img/greyUp.svg'
         count++
+        
+        let values = document.querySelectorAll('input')
+        let valuesArr = [...values]
+
+        valuesArr.forEach((item) => {
+            item = item.value
+        })
+
+        // Для чисел
+        // valuesArr.sort((a, b) => {
+        //     if (+(a.value) > +(b.value)) {
+        //         return 1;
+        //     }
+        //     if (+(a.value) < +(b.value)){
+        //         return -1;
+        //     }
+        //     return 0;
+        // })
+
+        let sorted = valuesArr.sort((a, b) => {
+            if (a.value > b.value) {
+                return 1;
+            }
+            if (a.value < b.value){
+                return -1;
+            }
+            return 0;
+        })
+        
+        console.log(valuesArr)
+        console.log(values)
+
     } else {
         event.target.src = './img/greyDown.svg'
         count++
-    } 
+
+        let values = document.querySelectorAll('input')
+        let valuesArr = [...values]
+
+        valuesArr.forEach((item) => {
+            item = item.value
+        })
+
+
+        // Для чисел
+        // valuesArr.sort((b, a) => {
+        //     if (+(a.value) > +(b.value)) {
+        //         return 1;
+        //     }
+        //     if (+(a.value) < +(b.value)){
+        //         return -1;
+        //     }
+        //     return 0;
+        // })
+
+        valuesArr.sort((b, a) => {
+            if (a.value > b.value) {
+                return 1;
+            }
+            if (a.value < b.value){
+                return -1;
+            }
+            return 0;
+        })
+
+        console.log(valuesArr)
+
+    }
 }
+
 
 function sortHover(event) {
     if (event.type == 'mouseover') {
@@ -90,4 +158,5 @@ function sortHover(event) {
             event.target.src = './img/greyUp.svg'
         }
     }
-} 
+}
+
