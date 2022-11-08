@@ -15,6 +15,7 @@ html {
     border-radius: 10px;
     border: 1px solid #C4C4C4;
     margin: auto;
+    box-shadow: 0px 6px 25px grey;
 }
 
 .main-block {
@@ -42,7 +43,6 @@ button {
     border-style: none;
     color: white;
     font-family: Roboto;
-
 }
 
 .sort {
@@ -60,6 +60,7 @@ button {
     border: 1px solid #C4C4C4;
     border-radius: 10px;
     margin-top: 12px;
+    padding: 3px;
     width: 305px;
     min-height: 35px;
     max-height: 175px;
@@ -83,16 +84,23 @@ input {
     height: 30px;
     margin: auto;
     border: none;
+    cursor: pointer;
+}
+
+.selected {
+    opacity: 0.6;
 }
 
 input:focus{
     outline: none;
+    background-color: #d8d8d852;
 }
 
 .button-add {
     width: 150px;
     height: 42px;
     background-color: #833AE0;
+    box-shadow: 0px 5px 7px grey;
 }
 
 .button-add p {

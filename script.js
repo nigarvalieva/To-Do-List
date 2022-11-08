@@ -14,6 +14,14 @@ function readOnly(event) {
     }
 }
 
+//Enter
+
+document.addEventListener('keyup', (event) => {
+    if (event.key == 'Enter'){
+        addDiv()
+    }
+  });
+
 //Крестик
 
 let greyX = document.querySelectorAll('.grey-x')
@@ -22,7 +30,14 @@ greyX.forEach((item) => {
 })
 
 function removeInput(event) {
+    const countDeleteBlock = document.querySelectorAll('.inputs-block input')
+    if (countDeleteBlock.length > 1){
     event.target.parentElement.remove()
+    } else {
+        countDeleteBlock.forEach((item) => {
+            item.value = ''
+        })
+    }
 }
 
 //Добавить
@@ -48,15 +63,14 @@ foot.addEventListener('click', addDiv);
 function addDiv() {
     let div = document.createElement('div');
     div.innerHTML =
-        `<div class="inputs-block">
-            <input type="text">
-            <img src="./img/greyX.svg" alt="grey-x" class="grey-x">
-            </div>`
+        `<input type="text" draggable="true">
+         <img src="./img/greyX.svg" alt="grey-x" class="grey-x">`
     let img = div.querySelectorAll('.grey-x')
     document.querySelector('.inputs').append(div)
     img.forEach((item) => {
         item.addEventListener('click', removeInput)
     })
+    div.classList.add('inputs-block')
     div.addEventListener('keyup', readOnly)
 }
 
@@ -73,13 +87,16 @@ function changeSortColor(event) {
     if (count % 2 == 0) {
         event.target.src = './img/greyUp.svg'
         count++
-        
-        let values = document.querySelectorAll('input')
-        let valuesArr = [...values]
 
-        valuesArr.forEach((item) => {
-            item = item.value
+        let values = document.querySelectorAll('input')
+        let valuesArr = []
+        values.forEach((item) => {
+            valuesArr.push(item)
         })
+
+        // valuesArr.forEach((item) => {
+        //     item = item.value
+        // })
 
         // Для чисел
         // valuesArr.sort((a, b) => {
@@ -96,12 +113,18 @@ function changeSortColor(event) {
             if (a.value > b.value) {
                 return 1;
             }
-            if (a.value < b.value){
+            if (a.value < b.value) {
                 return -1;
             }
             return 0;
         })
-        
+
+        for(let i = 0; i < values.length; i++){
+            console.log(values[i].value)
+            values[i].value = valuesArr[i].value
+
+        }
+
         console.log(valuesArr)
         console.log(values)
 
@@ -132,7 +155,7 @@ function changeSortColor(event) {
             if (a.value > b.value) {
                 return 1;
             }
-            if (a.value < b.value){
+            if (a.value < b.value) {
                 return -1;
             }
             return 0;
@@ -142,7 +165,6 @@ function changeSortColor(event) {
 
     }
 }
-
 
 function sortHover(event) {
     if (event.type == 'mouseover') {
@@ -160,3 +182,8 @@ function sortHover(event) {
     }
 }
 
+const dragPlace = document.querySelector('.inputs')
+
+new Sortable(dragPlace, {
+    animation: 150
+})
