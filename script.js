@@ -28,6 +28,7 @@ function removeInput(event) {
     } else {
         countDeleteBlock.forEach((item) => {
             item.value = ''
+            item.readOnly = false
         })
     }
 }
