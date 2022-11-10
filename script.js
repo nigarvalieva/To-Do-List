@@ -1,4 +1,3 @@
-//Input
 const inputBlock = document.querySelector('.inputs-block')
 const input = document.querySelectorAll('input');
 input.forEach((item) => {
@@ -9,14 +8,6 @@ function readOnly(event) {
         event.target.readOnly = true
     }
 }
-//Enter
-// document.addEventListener('keyup', (event) => {
-//     if (event.key == 'Enter'){
-//         addDiv()
-//     }
-//   });
-
-//Delete
 let greyX = document.querySelectorAll('.grey-x')
 greyX.forEach((item) => {
     item.addEventListener('click', removeInput)
@@ -32,7 +23,6 @@ function removeInput(event) {
         })
     }
 }
-//Add
 const foot = document.querySelector('.foot');
 foot.addEventListener('mouseover', changeColor);
 foot.addEventListener('mouseout', changeColor);
@@ -61,12 +51,10 @@ function addDiv() {
     div.classList.add('inputs-block')
     div.addEventListener('keyup', readOnly)
 }
-//Sort
 let sort = document.querySelector('.grey-down')
 sort.addEventListener('click', changeSortColor)
 sort.addEventListener('mouseover', sortHover)
 sort.addEventListener('mouseout', sortHover)
-
 let count = 0;
 function changeSortColor(event) {
     if (count % 2 == 0) {
@@ -77,16 +65,6 @@ function changeSortColor(event) {
         values.forEach((item) => {
             valuesArr.push(item.value)
         })
-        // Для чисел
-        // valuesArr.sort((a, b) => {
-        //     if (+(a.value) > +(b.value)) {
-        //         return 1;
-        //     }
-        //     if (+(a.value) < +(b.value)){
-        //         return -1;
-        //     }
-        //     return 0;
-        // })
         valuesArr.sort((a, b) => {
             if (a > b) {
                 return 1;
@@ -107,16 +85,6 @@ function changeSortColor(event) {
         values.forEach((item) => {
             valuesArr.push(item.value)
         })
-        // Для чисел
-        // valuesArr.sort((b, a) => {
-        //     if (+(a.value) > +(b.value)) {
-        //         return 1;
-        //     }
-        //     if (+(a.value) < +(b.value)){
-        //         return -1;
-        //     }
-        //     return 0;
-        // })
         valuesArr.sort((b, a) => {
             if (a > b) {
                 return 1;
@@ -146,7 +114,6 @@ function sortHover(event) {
         }
     }
 }
-//Drag
 const dragPlace = document.querySelector('.inputs')
 new Sortable(dragPlace, {
     animation: 150
