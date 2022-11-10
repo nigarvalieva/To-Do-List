@@ -53,6 +53,7 @@ function addDiv() {
     })
     div.classList.add('inputs-block')
     div.addEventListener('keyup', readOnly)
+    div.scrollTop=div.scrollHeight
 }
 let sort = document.querySelector('.grey-down')
 sort.addEventListener('click', changeSortColor)
