@@ -15,14 +15,12 @@ greyX.forEach((item) => {
 function removeInput(event) {
     const countDeleteBlock = document.querySelectorAll('.inputs-block input')
     if (countDeleteBlock.length > 1){
-        if (event.target.type == 'Enter'){
-            event.target.parentElement.remove()
-        } else {
-            countDeleteBlock.forEach((item) => {
-                item.value = ''
-                item.readOnly = false
-            })
-        }
+    event.target.parentElement.remove()
+    } else {
+        countDeleteBlock.forEach((item) => {
+            item.value = ''
+            item.readOnly = false
+        })
     }
 }
 const foot = document.querySelector('.foot');
