@@ -15,12 +15,14 @@ greyX.forEach((item) => {
 function removeInput(event) {
     const countDeleteBlock = document.querySelectorAll('.inputs-block input')
     if (countDeleteBlock.length > 1){
-    event.target.parentElement.remove()
-    } else {
-        countDeleteBlock.forEach((item) => {
-            item.value = ''
-            item.readOnly = false
-        })
+        if (event.target.type == 'Enter'){
+            event.target.parentElement.remove()
+        } else {
+            countDeleteBlock.forEach((item) => {
+                item.value = ''
+                item.readOnly = false
+            })
+        }
     }
 }
 const foot = document.querySelector('.foot');
@@ -117,4 +119,4 @@ function sortHover(event) {
 const dragPlace = document.querySelector('.inputs')
 new Sortable(dragPlace, {
     animation: 150
-})
+})  
