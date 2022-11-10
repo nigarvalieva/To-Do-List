@@ -14,13 +14,16 @@ greyX.forEach((item) => {
 })
 function removeInput(event) {
     const countDeleteBlock = document.querySelectorAll('.inputs-block input')
+    
     if (countDeleteBlock.length > 1){
-    event.target.parentElement.remove()
+        if (event.target.previousElementSibling.readOnly == true) {
+            event.target.parentElement.remove()
+        } else {
+            event.target.previousElementSibling.value = ''
+        }   
     } else {
-        countDeleteBlock.forEach((item) => {
-            item.value = ''
-            item.readOnly = false
-        })
+        event.target.previousElementSibling.value = ''
+        event.target.previousElementSibling.readOnly = false
     }
 }
 const foot = document.querySelector('.foot');
