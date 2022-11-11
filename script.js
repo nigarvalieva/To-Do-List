@@ -1,5 +1,6 @@
 const inputBlock = document.querySelector('.inputs-block')
 const input = document.querySelectorAll('input');
+const inputs = document.querySelector('.inputs');
 input.forEach((item) => {
     item.addEventListener('keyup', readOnly)
 })
@@ -53,7 +54,7 @@ function addDiv() {
     })
     div.classList.add('inputs-block')
     div.addEventListener('keyup', readOnly)
-    div.scrollTop=div.scrollHeight
+    inputs.scrollTop=inputs.scrollHeight
 }
 let sort = document.querySelector('.grey-down')
 sort.addEventListener('click', changeSortColor)
