@@ -7,6 +7,7 @@ input.forEach((item) => {
 function readOnly(event) {
     if (event.key == 'Enter') {
         event.target.readOnly = true
+        inputs.scrollTop=inputs.scrollHeight
     }
 }
 let greyX = document.querySelectorAll('.grey-x')
