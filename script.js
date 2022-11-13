@@ -64,7 +64,7 @@ sort.addEventListener('mouseout', sortHover)
 let count = 0;
 function changeSortColor(event) {
     if (count % 2 == 0) {
-        event.target.src = './img/greyUp.svg'
+        event.target.src = './img/blackUp.svg'
         count++
         let values = document.querySelectorAll('input')
         let valuesArr = []
@@ -84,7 +84,7 @@ function changeSortColor(event) {
             values[i].value = valuesArr[i]
         }
     } else {
-        event.target.src = './img/greyDown.svg'
+        event.target.src = './img/blackDown.svg'
         count++
         let values = document.querySelectorAll('input')
         let valuesArr = []
